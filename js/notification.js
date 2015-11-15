@@ -2,15 +2,32 @@ $(document).ready(function() {
 
 	var messages;
 	var notificatons;
+	var notificationStatus = false;
+	var messageStatus = false;
 
 	$('body').click(function(event) {
 		var elementId = event.target.id;
 
 	    if(elementId === 'notificationLink') {
-	    	showPopup(1);
+	    	$("#mesagesContainer").hide();
+	    	$("#solicitudContainer").hide();
+	    	$("#notificationContainer").fadeToggle(300);
+			$("#notification_count").fadeOut("slow");
+			return false;
 	    }
 	    else if (elementId === 'messageLink') {
-	    	showPopup(2);
+	    	$("#notificationContainer").hide();
+	    	$("#solicitudContainer").hide();
+	    	$("#mesagesContainer").fadeToggle(300);
+	    	$("#message_count").fadeOut("slow");
+	    	return false;
+	    }
+	    else if (elementId === 'solicitudLink') {
+	    	$("#notificationContainer").hide();
+	    	$("#mesagesContainer").hide();
+	    	$("#solicitudContainer").fadeToggle(300);
+	    	$("#solicitud_count").fadeOut("slow");
+	    	return false;
 	    }
 	});
 
@@ -23,6 +40,8 @@ $(document).ready(function() {
 	//Document Click hiding the popup
 	$(document).click(function() {
 		$("#notificationContainer").hide();
+		$("#mesagesContainer").hide();
+		$("#solicitudContainer").hide();
 	});
 
 	//Popup on click
@@ -30,26 +49,12 @@ $(document).ready(function() {
 		return false;
 	});
 
-	//Document Click hiding the popup
-	$(document).click(function() {
-		$("#mesagesContainer").hide();
-	});
-
-	//Popup on click
-	$("#mesagesContainer").click(function() {
+	$("#mesagesContainer").click(function() { 
 		return false;
 	});
 
-	function showPopup(id) {
-		if (id === 1) {
-			$("#notificationContainer").fadeToggle(300);
-			$("#notification_count").fadeOut("slow");
-			return false;
-		} else if (id === 2) {
-			$("#mesagesContainer").fadeToggle(300);
-			$("#message_count").fadeOut("slow");
-			return false;
-		}
-	}
+	$("#solicitudContainer").click(function() { 
+		return false;
+	});
 
 });

@@ -52,8 +52,8 @@ margin-left: 188px;
 font-weight: bold;
 padding: 8px;
 font-size: 13px;
-background-color: #ffffff;
-position: fixed;
+background-color: green;
+position: static;
 z-index: 1000;
 width: 384px;
 border-bottom: 1px solid #dddddd;
@@ -65,7 +65,7 @@ min-height:300px;
 }
 #notificationFooter
 {
-background-color: #e9eaed;
+background-color: green;
 text-align: center;
 font-weight: bold;
 padding: 8px;
@@ -109,26 +109,92 @@ margin-left: 188px;
 font-weight: bold;
 padding: 8px;
 font-size: 13px;
-background-color: #ffffff;
-position: fixed;
+background-color: green;
+position: static;
 z-index: 1000;
 width: 384px;
 border-bottom: 1px solid #dddddd;
 }
 #mesagesBody
 {
-padding: 33px 0px 0px 0px !important;
+/*padding: 33px 0px 0px 0px !important;*/
+padding-top:2px; 
 min-height:300px;
+max-height: calc(50vh - 210px);
+overflow-y: auto;
 }
 #mesagesFooter
 {
-background-color: #e9eaed;
+//#e9eaed;
+background-color: green;
 text-align: center;
 font-weight: bold;
 padding: 8px;
 font-size: 12px;
 border-top: 1px solid #dddddd;
 }
+
+/******** Solicitudes li******/
+#solicitud_li
+{
+position:relative
+}
+#solicitudContainer
+{
+background-color: #fff;
+border: 1px solid rgba(100, 100, 100, .4);
+-webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+overflow: visible;
+position: absolute;
+top: 30px;
+margin-left: -170px;
+width: 400px;
+z-index: -1;
+display: none; /* Enable this after jquery implementation */
+}
+/* Popup Arrow*/
+#solicitudContainer:before {
+content: '';
+display: block;
+position: absolute;
+width: 0;
+height: 0;
+color: transparent;
+border: 10px solid black;
+border-color: transparent transparent white;
+margin-top: -20px;
+margin-left: 188px;
+}
+#solicitudTitle
+{
+font-weight: bold;
+padding: 8px;
+font-size: 13px;
+background-color: green;
+position: static;
+z-index: 1000;
+width: 384px;
+border-bottom: 1px solid #dddddd;
+}
+#solicitudBody
+{
+/*padding: 33px 0px 0px 0px !important;*/
+padding-top:2px; 
+min-height:300px;
+max-height: calc(50vh - 210px);
+overflow-y: auto;
+}
+#solicitudFooter
+{
+//#e9eaed;
+background-color: green;
+text-align: center;
+font-weight: bold;
+padding: 8px;
+font-size: 12px;
+border-top: 1px solid #dddddd;
+}
+
 
 /****Boundle****/
 #notification_count
@@ -158,3 +224,17 @@ position: absolute;
 margin-top: -17px;
 font-size: 11px;
 }
+
+#solicitud_count
+{
+padding: 3px 7px;
+background: #C00 none repeat scroll 0% 0%;
+color: #FFF;
+font-weight: bold;
+margin-left: 40px;
+border-radius: 9px;
+position: absolute;
+margin-top: -17px;
+font-size: 11px;
+}
+

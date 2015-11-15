@@ -1,0 +1,21 @@
+.solicitudes {
+	/*background: red;*/
+	display: inline-block;
+	border-bottom: 1px solid #dddddd;
+	margin: 1px;
+	width: 90%;
+}
+
+.solicitud-main {
+	display: flex;
+}
+
+.solicitud-info {
+	margin-left: 10px;
+	padding-top: 25px;
+}
+
+.solicitud-buttons {
+	margin-left: 10px;
+	padding-top: 25px;
+}
